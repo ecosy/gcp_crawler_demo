@@ -14,6 +14,13 @@ options.add_argument('window-size=1920x1080')
 options.add_argument("disable-gpu")
 driver = webdriver.Chrome(os.getcwd() + '/chromedriver', chrome_options=options)
 
+
+# __________________________________________________________________________
+
+# 이 아래 부분의 코드에 원하시는 크롤링 코드를 넣어 사용하시면 됩니다.
+# __________________________________________________________________________
+
+
 # url 접속하기
 driver.get(url)
 driver.implicitly_wait(0.3)
@@ -29,7 +36,7 @@ print("Crawler start...")
 crawled_data = {}
 
 for _type, _xpath in youtube_xpath_meta.items():
-    print("Let's get ", type)
+    print("Let's get ", _type)
     crawled_data[_type] = driver.find_element_by_xpath(_xpath).text
     driver.implicitly_wait(0.3)
     
