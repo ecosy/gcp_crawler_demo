@@ -1,6 +1,7 @@
 #%%
 from selenium import webdriver
 import csv
+import os
 
 #%%
 url = "https://www.youtube.com/watch?v=lGCo8ILvauI&t=1785s"
@@ -11,7 +12,7 @@ options = webdriver.ChromeOptions()
 options.add_argument('headless')
 options.add_argument('window-size=1920x1080')
 options.add_argument("disable-gpu")
-driver = webdriver.Chrome('chromedriver', chrome_options=options)
+driver = webdriver.Chrome(os.getcwd() + '/chromedriver', chrome_options=options)
 #%%
 driver.get(url)
 driver.implicitly_wait(0.3)
