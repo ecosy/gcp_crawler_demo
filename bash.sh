@@ -1,7 +1,7 @@
 # python3 설치
 sudo apt-get install python3
 sudo apt-get install python3-pip
-python3 --version
+pip install --upgrade pip
 
 # 크롤러 패키지 설치
 pip3 install -r requirements.txt
@@ -16,3 +16,10 @@ sudo apt-get install -y gconf-service libappindicator3-1 libgbm1 libasound2 liba
 
 # 크롬 드라이버 다운로드
 sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+# 크롬 드라이버 추가 종속성 설치
+sudo apt --fix-broken install
+
+# 크롬드라이버 설치
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+sudo apt-get -fy install

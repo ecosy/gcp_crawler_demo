@@ -29,11 +29,11 @@ print("Crawler start...")
 crawled_data = {}
 
 for _type, _xpath in youtube_xpath_meta.items():
-    print(f"Let's get {_type} !!")
-    crawled_data[_type] = driver.find_element_by_xpath(f"{_xpath}").text
+    print("Let's get ", type)
+    crawled_data[_type] = driver.find_element_by_xpath(_xpath).text
     driver.implicitly_wait(0.3)
     
-    print(f"contents : {crawled_data[_type]}")
+    print("contents :", crawled_data[_type])
     print()
 
 driver.quit()
